@@ -1,0 +1,23 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Administration — Spice Delight{% endblock %}
+{% block content %}
+<section class="team">
+  <h2>Our Team</h2>
+  <div class="team-grid">
+  {% for member in team %}
+      {% with 'images/'|add:member.image as image_path %}
+        <div class="member">
+          <img src="{% static image_path %}" alt="{{ member.name }}">
+          <p>{{ member.name }} – {{ member.role }}</p>
+        </div>
+      {% endwith %}
+    {% endfor %}
+
+
+
+  </div>
+</section>
+{% endblock %}

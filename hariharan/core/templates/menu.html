@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Menu — Spice Delight{% endblock %}
+{% block content %}
+<section class="menu">
+  <h2>Our Menu</h2>
+  <div class="menu-grid">
+    {% for food in foods %}
+      <div class="item">
+        <img src="{% static 'images/'|add:food.image %}" alt="{{ food.name }}">
+        <p>{{ food.name }}</p>
+      </div>
+    {% endfor %}
+  </div> 
+</section>
+{% endblock %}
